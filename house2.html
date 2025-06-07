@@ -50,38 +50,36 @@
         <div class="gallery-card"><img src="IMAGES/house2/floorplanimage.jpg" alt="Photo 8" /></div>
         <div class="gallery-card"><img src="IMAGES/house2/house2.jpg" alt="Floorplan" /></div>
       </div>
-    </div>
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-image" class="lightbox-content" src="" alt="">
+        <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
+      </div>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal">
-      <span class="close-btn" onclick="closeLightbox()">&times;</span>
-      <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
-      <img id="lightbox-image" class="lightbox-content" src="" alt="">
-      <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
-    </div>
-
-    <div class="paragraph-container">
-      <div class="header-text">
-        <div class="text-bold">CUSTOM-BUILT ENTERTAINMENT CENTER</div>
-        <div class="text-bold">ADDITIONAL LAUNDRY ROOM</div>
-      </div>
-      <div class="paragraph-text">Discover one of the largest homes in the highly sought-after Lamp Lighter 
-        Village—an all-ages, dog-friendly community with easy access to Freeway 54. This beautifully 
-        maintained 4-bedroom, 2-bath mobile home offers comfort, space, and convenience in every corner. 
-      </div>
-      <div class="paragraph-text">
-        Step into a generously sized living room with a custom-built entertainment center, newly upgraded 
-        floors and countertops, and a layout designed for both relaxation and entertaining. Enjoy the 
-        convenience of a separate laundry room and a remodeled bathroom featuring dual sinks for added luxury.
-      </div>
-      <div class="paragraph-text">
-        Additional highlights include a 2-car carport, and rent that includes utilities—offering incredible 
-        value. As a resident, you'll also enjoy access to premium community amenities such as a swimming pool, 
-        fitness center, and clubhouse.
-        Don’t miss this rare opportunity to own a spacious, move-in-ready home in a vibrant, welcoming community!
+      <div class="paragraph-container">
+        <div class="header-text">
+          <div class="text-bold">CUSTOM-BUILT ENTERTAINMENT CENTER</div>
+          <div class="text-bold">ADDITIONAL LAUNDRY ROOM</div>
+        </div>
+        <div class="paragraph-text">Discover one of the largest homes in the highly sought-after Lamp Lighter 
+          Village—an all-ages, dog-friendly community with easy access to Freeway 54. This beautifully 
+          maintained 4-bedroom, 2-bath mobile home offers comfort, space, and convenience in every corner. 
+        </div>
+        <div class="paragraph-text">
+          Step into a generously sized living room with a custom-built entertainment center, newly upgraded 
+          floors and countertops, and a layout designed for both relaxation and entertaining. Enjoy the 
+          convenience of a separate laundry room and a remodeled bathroom featuring dual sinks for added luxury.
+        </div>
+        <div class="paragraph-text">
+          Additional highlights include a 2-car carport, and rent that includes utilities—offering incredible 
+          value. As a resident, you'll also enjoy access to premium community amenities such as a swimming pool, 
+          fitness center, and clubhouse.
+          Don’t miss this rare opportunity to own a spacious, move-in-ready home in a vibrant, welcoming community!
+        </div>
       </div>
     </div>
-
     <script>
       const lightbox = document.getElementById("lightbox-modal");
       const lightboxImg = document.getElementById("lightbox-image");
@@ -134,6 +132,34 @@
           if (e.key === "ArrowRight") changeImage(1);
           if (e.key === "ArrowLeft") changeImage(-1);
           if (e.key === "Escape") closeLightbox();
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".header-right span");
+        const homeItem = menuItems[0];
+        homeItem.classList.add("default-active");
+
+        menuItems.forEach(item => {
+          item.addEventListener("click", function () {
+            menuItems.forEach(i => i.classList.remove("active", "default-active"));
+            this.classList.add("active");
+          });
+        });
+
+        // Disable image dragging
+        document.querySelectorAll('img').forEach(img => {
+          img.setAttribute('draggable', 'false');
+        });
+      });
+
+      // Block dev tools and view-source shortcuts
+      document.addEventListener('keydown', function (e) {
+        if (
+          e.ctrlKey && (e.key === 'u' || e.key === 'U') || // Ctrl+U
+          e.key === 'F12' ||                               // F12
+          (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase()))
+        ) {
+          e.preventDefault();
         }
       });
     </script>
