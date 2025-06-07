@@ -41,7 +41,7 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-/* Preloader styles */
+/* Preloader styles ending*/
 .main-content {
   display: flex;
   flex-direction: row;
@@ -58,6 +58,15 @@ body {
   background-size: cover;
   background-position: center;
   font-family: Tahoma, sans-serif;
+}
+/* Protection: Disable text selection & image dragging */
+body, html, .background-image, .main-content, img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .header {
@@ -258,4 +267,106 @@ footer {
   display: flex !important;
   opacity: 1 !important;
   pointer-events: auto !important;
+}
+/* Responsive for 768px and below */
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 28px;
+    top: 20px;
+    padding: 8px 15px;
+    margin-left: -400px;
+  }
+
+  .container {
+    max-width: 90%;
+    padding: 10px;
+    margin-top: 300px;
+  }
+
+  .contact-info h2 {
+    font-size: 32px;
+  }
+
+  form label,
+  form input,
+  form textarea,
+  form button {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+    margin-right: 20px;
+    margin-bottom: 150px;
+  }
+
+}
+
+/* Responsive for 400px and below */
+@media (max-width: 400px) {
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* left-align the text inside */
+    gap: 15px;
+    font-size: 22px;
+    top: 15px;
+    padding: 10px;
+    margin-left: -140px;
+  }
+
+  .container {
+    max-width: 95%;
+    padding: 8px;
+    margin-top: 250px;
+  }
+
+  .contact-info h2 {
+    font-size: 26px;
+  }
+
+  .contact-info p {
+    font-size: 13px;
+  }
+
+  form label {
+    font-size: 12px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  form button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .popup-content {
+    padding: 20px;
+  }
+
+  .popup-content h2 {
+    font-size: 20px;
+  }
+
+  .popup-content button {
+    font-size: 13px;
+    padding: 8px 15px;
+  }
+
+  footer {
+    font-size: 11px;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+  }
+
 }
