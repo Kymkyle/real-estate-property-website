@@ -46,7 +46,15 @@ html, body {
   height: 100%;
   margin: 0;
 }
-
+/* Protection: Disable text selection & image dragging */
+body, html, .background-image, .main-content, img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
 body {
   display: flex;
   justify-content: center;
@@ -209,5 +217,149 @@ body {
 @keyframes fadeIn {
   to {
     opacity: 1;
+  }
+}
+/* Responsive styles */
+
+/* For devices up to 768px (tablets) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 28px;
+    padding: 10px 20px;
+    top: 20px;
+    left: 20px;
+  }
+
+  .body-container {
+    flex-direction: column; /* Stack sections vertically */
+    height: auto; /* Remove fixed height */
+    padding-top: 100px;
+  }
+
+  .left-body,
+  .middle-body,
+  .right-body {
+    flex: none;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .middle-body {
+    margin-top: 20px;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .left-details {
+    margin-top: 220px;
+    margin-left: 0;
+    padding: 20px;
+    transform: none;
+  }
+
+  .image {
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+    transform: none;
+  }
+
+  .image-house {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    transform: none;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .bio-header {
+    font-size: 24px;
+  }
+
+  .bio-details {
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  #preloader {
+    font-size: 24px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 4px;
+  }
+}
+
+/* For devices up to 400px (small mobile phones) */
+@media (max-width: 400px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 22px;
+    padding: 8px 15px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .body-container {
+    padding-top: 80px;
+  }
+  .left-body {
+    margin-top: -100px;
+  }
+
+  .left-details {
+    padding: 15px;
+  }
+
+  .name {
+    font-size: 26px;
+  }
+
+  .info-header {
+    font-size: 16px;
+  }
+
+  .info-details {
+    font-size: 14px;
+  }
+
+  .bio-header {
+    margin-top: -50px;
+    font-size: 20px;
+  }
+
+  .bio-details {
+    font-size: 16px;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 250px;
+    margin: 15px auto;
+  }
+
+  .image-house {
+    width: 100%;
+    max-width: 250px;
+    margin: 8px auto;
+  }
+
+  #preloader {
+    font-size: 20px;
+  }
+
+  .spinner {
+    width: 35px;
+    height: 35px;
+    border-width: 3px;
   }
 }
