@@ -50,37 +50,35 @@
         <div class="gallery-card"><img src="IMAGES/house3/house3.jpg" alt="Photo 8" /></div>
         <div class="gallery-card"><img src="IMAGES/house3/floorplan.jpg" alt="Floorplan" /></div>
       </div>
-    </div>
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-image" class="lightbox-content" src="" alt="">
+        <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
+      </div>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal">
-      <span class="close-btn" onclick="closeLightbox()">&times;</span>
-      <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
-      <img id="lightbox-image" class="lightbox-content" src="" alt="">
-      <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
-    </div>
-
-    <div class="paragraph-container">
-      <div class="header-text">
-        <div class="text-bold">CHARMING FRONT PORCH</div>
-        <div class="text-bold">BRIGHT COMFORTABLE LIVING</div>
-      </div>
-      <div class="paragraph-text">Nestled in a luxury leased-land community known for its pride of 
-        ownership, this beautifully maintained 3-bedroom, 2-bath manufactured home offers 1,139 
-        sq. ft. of bright and inviting living space. 
-      </div>
-      <div class="paragraph-text">
-        Freshly painted from top to bottom, the interior feels like new—every detail thoughtfully 
-        refreshed. Step onto the welcoming front porch, perfect for sipping your morning coffee or 
-        relaxing at the end of the day.
-      </div>
-      <div class="paragraph-text">
-        With a move-in ready condition, all that’s missing is your furniture and personal touch to 
-        make this house your home. Don’t miss this opportunity to live in a community that combines 
-        comfort, charm, and care.
+      <div class="paragraph-container">
+        <div class="header-text">
+          <div class="text-bold">CHARMING FRONT PORCH</div>
+          <div class="text-bold">BRIGHT COMFORTABLE LIVING</div>
+        </div>
+        <div class="paragraph-text">Nestled in a luxury leased-land community known for its pride of 
+          ownership, this beautifully maintained 3-bedroom, 2-bath manufactured home offers 1,139 
+          sq. ft. of bright and inviting living space. 
+        </div>
+        <div class="paragraph-text">
+          Freshly painted from top to bottom, the interior feels like new—every detail thoughtfully 
+          refreshed. Step onto the welcoming front porch, perfect for sipping your morning coffee or 
+          relaxing at the end of the day.
+        </div>
+        <div class="paragraph-text">
+          With a move-in ready condition, all that’s missing is your furniture and personal touch to 
+          make this house your home. Don’t miss this opportunity to live in a community that combines 
+          comfort, charm, and care.
+        </div>
       </div>
     </div>
-
     <script>
       const lightbox = document.getElementById("lightbox-modal");
       const lightboxImg = document.getElementById("lightbox-image");
@@ -133,6 +131,34 @@
           if (e.key === "ArrowRight") changeImage(1);
           if (e.key === "ArrowLeft") changeImage(-1);
           if (e.key === "Escape") closeLightbox();
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".header-right span");
+        const homeItem = menuItems[0];
+        homeItem.classList.add("default-active");
+
+        menuItems.forEach(item => {
+          item.addEventListener("click", function () {
+            menuItems.forEach(i => i.classList.remove("active", "default-active"));
+            this.classList.add("active");
+          });
+        });
+
+        // Disable image dragging
+        document.querySelectorAll('img').forEach(img => {
+          img.setAttribute('draggable', 'false');
+        });
+      });
+
+      // Block dev tools and view-source shortcuts
+      document.addEventListener('keydown', function (e) {
+        if (
+          e.ctrlKey && (e.key === 'u' || e.key === 'U') || // Ctrl+U
+          e.key === 'F12' ||                               // F12
+          (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase()))
+        ) {
+          e.preventDefault();
         }
       });
     </script>
