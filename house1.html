@@ -50,37 +50,38 @@
         <div class="gallery-card"><img src="IMAGES/house1/house1.jpg" alt="Photo 8" /></div>
         <div class="gallery-card"><img src="IMAGES/house1/floorplan.png" alt="Floorplan" /></div>
       </div>
-    </div>
+    
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal">
-      <span class="close-btn" onclick="closeLightbox()">&times;</span>
-      <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
-      <img id="lightbox-image" class="lightbox-content" src="" alt="">
-      <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
-    </div>
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-image" class="lightbox-content" src="" alt="">
+        <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
+      </div>
 
-    <div class="paragraph-container">
-      <div class="header-text">
-        <div class="text-bold">GENEROUSLY SIZED BACKYARD</div>
-        <div class="text-bold">FAMILY ROOM</div>
-        <div class="text-bold">FORMAL DINING AREA</div>
-        <div class="text-bold">COVERED ALUMAWOOD PATIO</div>
-      </div>
-      <div class="paragraph-text">Nestled in the highly desirable Jackson Crossing community, this spacious 3-bedroom, 
-        2-bathroom home offers a rare  chance to create your dream retreat. All bedrooms are thoughtfully located 
-        upstairs, while the main level boasts a separate living room, cozy family room, and formal dining area—perfect 
-        for both everyday living and entertaining guests. 
-      </div>
-      <div class="paragraph-text">
-        Step outside to a covered Alumawood patio overlooking a generously sized backyard, ready to be transformed into 
-        your personal oasis. For added convenience, the washer, dryer, and refrigerator are included.
-      </div>
-      <div class="paragraph-text">
-        Ideally situated near major freeways, shopping centers, and dining options, this home combines incredible potential 
-        with an unbeatable location. While it awaits your choice of new flooring and fresh paint, it presents the perfect 
-        blank canvas for your modern vision. Energy-efficient solar panels are already installed under a Power Purchase 
-        Agreement (PPA), which the buyer will assume—helping to reduce your future energy costs.
+      <div class="paragraph-container">
+        <div class="header-text">
+          <div class="text-bold">GENEROUSLY SIZED BACKYARD</div>
+          <div class="text-bold">FAMILY ROOM</div>
+          <div class="text-bold">FORMAL DINING AREA</div>
+          <div class="text-bold">COVERED ALUMAWOOD PATIO</div>
+        </div>
+        <div class="paragraph-text">Nestled in the highly desirable Jackson Crossing community, this spacious 3-bedroom, 
+          2-bathroom home offers a rare  chance to create your dream retreat. All bedrooms are thoughtfully located 
+          upstairs, while the main level boasts a separate living room, cozy family room, and formal dining area—perfect 
+          for both everyday living and entertaining guests. 
+        </div>
+        <div class="paragraph-text">
+          Step outside to a covered Alumawood patio overlooking a generously sized backyard, ready to be transformed into 
+          your personal oasis. For added convenience, the washer, dryer, and refrigerator are included.
+        </div>
+        <div class="paragraph-text">
+          Ideally situated near major freeways, shopping centers, and dining options, this home combines incredible potential 
+          with an unbeatable location. While it awaits your choice of new flooring and fresh paint, it presents the perfect 
+          blank canvas for your modern vision. Energy-efficient solar panels are already installed under a Power Purchase 
+          Agreement (PPA), which the buyer will assume—helping to reduce your future energy costs.
+        </div>
       </div>
     </div>
 
@@ -136,6 +137,34 @@
           if (e.key === "ArrowRight") changeImage(1);
           if (e.key === "ArrowLeft") changeImage(-1);
           if (e.key === "Escape") closeLightbox();
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".header-right span");
+        const homeItem = menuItems[0];
+        homeItem.classList.add("default-active");
+
+        menuItems.forEach(item => {
+          item.addEventListener("click", function () {
+            menuItems.forEach(i => i.classList.remove("active", "default-active"));
+            this.classList.add("active");
+          });
+        });
+
+        // Disable image dragging
+        document.querySelectorAll('img').forEach(img => {
+          img.setAttribute('draggable', 'false');
+        });
+      });
+
+      // Block dev tools and view-source shortcuts
+      document.addEventListener('keydown', function (e) {
+        if (
+          e.ctrlKey && (e.key === 'u' || e.key === 'U') || // Ctrl+U
+          e.key === 'F12' ||                               // F12
+          (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase()))
+        ) {
+          e.preventDefault();
         }
       });
     </script>
