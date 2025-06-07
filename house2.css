@@ -3,16 +3,24 @@
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  width: 100%;
+  width: 95%;
   gap: 30px;
   padding: 40px;
   background-color: #111;
   color: white;
   font-family: Tahoma, sans-serif;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
 }
-
+/* Protection: Disable text selection & image dragging */
+body, html, .background-image, .body-container, img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
 /* House details panel */
 .house-details {
   flex: 1;
@@ -150,9 +158,9 @@
   position: absolute;
   top: 480px;
   bottom: 50px;
-  right: 10px;
-  max-width: 650px;
-  height: 300px;
+  right: 30px;
+  max-width: 660px;
+  height: 260px;
   background: rgba(255, 255, 255, 0.05);
   padding: 20px;
   border-radius: 10px;
@@ -203,4 +211,129 @@
 
 .next-btn {
   right: 30px;
+}
+/* For devices up to 768px (tablets) */
+@media (max-width: 768px) {
+  .body-container {
+    flex-direction: column;
+    padding: 20px;
+    bottom: 40px;
+    gap: 20px;
+    width: 90%;
+  }
+
+  .house-details {
+    width:95%;
+    margin-top: 40px;
+    padding: 15px;
+  }
+
+  .image-gallery {
+    width: 98%;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 10px;
+  }
+
+  .paragraph-container {
+    position: static; /* Stack normally */
+    width: 95%;
+    height: auto;
+    margin-top: 10px;
+    padding: 15px;
+  }
+
+  .prev-btn, .next-btn {
+    font-size: 30px;
+    padding: 8px;
+    top: 45%;
+  }
+
+  .backlink-text {
+    margin-top: 50px;
+    margin-left: 0;
+  }
+  .back-link {
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;   /* if it's inside a block element */
+    display: block;       /* ensure it behaves like a block */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* For devices up to 400px (small phones) */
+@media (max-width: 400px) {
+  .body-container {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    width: 95%;
+  }
+
+  .house-details {
+    width: 93%;
+  }
+
+  .house img {
+    width: 100%;
+    max-width: 340px; /* If you want images smaller */
+    margin: 0 auto;
+    display: block;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .paragraph-container {
+    position: static;
+    width: 95%;
+    height: auto;
+    margin-top: 15px;
+    padding: 12px;
+  }
+
+  .prev-btn, .next-btn {
+    font-size: 24px;
+    padding: 6px;
+    top: 45%;
+  }
+
+  .backlink-text {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+
+  .back-link {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .house-price {
+    font-size: 20px;
+  }
+
+  .address {
+    font-size: 14px;
+  }
+
+  .container-text {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .body-details {
+    font-size: 16px;
+  }
+
+  .body-name {
+    font-size: 12px;
+  }
+
+  .paragraph-text {
+    font-size: 13px;
+    line-height: 1.5;
+  }
 }
