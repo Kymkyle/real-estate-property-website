@@ -50,42 +50,41 @@
         <div class="gallery-card"><img src="IMAGES/house4/8.jpg" alt="Photo 8" /></div>
         <div class="gallery-card"><img src="IMAGES/house4/house4.jpg" alt="Photo9" /></div>
       </div>
-    </div>
+    
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-image" class="lightbox-content" src="" alt="">
+        <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
+      </div>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal">
-      <span class="close-btn" onclick="closeLightbox()">&times;</span>
-      <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
-      <img id="lightbox-image" class="lightbox-content" src="" alt="">
-      <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
-    </div>
-
-    <div class="paragraph-container">
-      <div class="header-text">
-        <div class="text-bold"> LOW-MAINTENANCE BACKYARD</div>
-        <div class="text-bold">QUIET CUL-DE-SAC</div>
-      </div>
-      <div class="paragraph-text">Tucked away in a quiet cul-de-sac in the heart of Yucaipa, 
-        this beautifully landscaped 4-bedroom, 3-bathroom home offers 2,050 sq. ft. of 
-        thoughtfully designed living space—with no HOA restrictions.
-      </div>
-      <div class="paragraph-text">
-        Step inside to discover a bright, open floor plan that effortlessly connects the living, 
-        dining, and kitchen areas—ideal for both everyday living and entertaining. The spacious 
-        living room features a cozy fireplace, creating a warm, inviting atmosphere for relaxing 
-        or hosting guests.
-      </div>
-      <div class="paragraph-text">
-        The primary suite is a standout feature, offering direct access to a covered patio and a 
-        low-maintenance backyard—perfect for unwinding in your own private oasis. The yard is 
-        beautifully landscaped, offering tranquil outdoor living with minimal upkeep.
-        This move-in-ready gem offers the perfect blend of comfort, privacy, and convenience in one 
-        of Yucaipa’s most desirable neighborhood. Whether you're gathering with friends or enjoying 
-        a quiet evening at home, this residence is ready to welcome you.
-        Don’t miss your chance to make it yours!
+      <div class="paragraph-container">
+        <div class="header-text">
+          <div class="text-bold"> LOW-MAINTENANCE BACKYARD</div>
+          <div class="text-bold">QUIET CUL-DE-SAC</div>
+        </div>
+        <div class="paragraph-text">Tucked away in a quiet cul-de-sac in the heart of Yucaipa, 
+          this beautifully landscaped 4-bedroom, 3-bathroom home offers 2,050 sq. ft. of 
+          thoughtfully designed living space—with no HOA restrictions.
+        </div>
+        <div class="paragraph-text">
+          Step inside to discover a bright, open floor plan that effortlessly connects the living, 
+          dining, and kitchen areas—ideal for both everyday living and entertaining. The spacious 
+          living room features a cozy fireplace, creating a warm, inviting atmosphere for relaxing 
+          or hosting guests.
+        </div>
+        <div class="paragraph-text">
+          The primary suite is a standout feature, offering direct access to a covered patio and a 
+          low-maintenance backyard—perfect for unwinding in your own private oasis. The yard is 
+          beautifully landscaped, offering tranquil outdoor living with minimal upkeep.
+          This move-in-ready gem offers the perfect blend of comfort, privacy, and convenience in one 
+          of Yucaipa’s most desirable neighborhood. Whether you're gathering with friends or enjoying 
+          a quiet evening at home, this residence is ready to welcome you.
+          Don’t miss your chance to make it yours!
+        </div>
       </div>
     </div>
-
     <script>
       const lightbox = document.getElementById("lightbox-modal");
       const lightboxImg = document.getElementById("lightbox-image");
@@ -138,6 +137,34 @@
           if (e.key === "ArrowRight") changeImage(1);
           if (e.key === "ArrowLeft") changeImage(-1);
           if (e.key === "Escape") closeLightbox();
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".header-right span");
+        const homeItem = menuItems[0];
+        homeItem.classList.add("default-active");
+
+        menuItems.forEach(item => {
+          item.addEventListener("click", function () {
+            menuItems.forEach(i => i.classList.remove("active", "default-active"));
+            this.classList.add("active");
+          });
+        });
+
+        // Disable image dragging
+        document.querySelectorAll('img').forEach(img => {
+          img.setAttribute('draggable', 'false');
+        });
+      });
+
+      // Block dev tools and view-source shortcuts
+      document.addEventListener('keydown', function (e) {
+        if (
+          e.ctrlKey && (e.key === 'u' || e.key === 'U') || // Ctrl+U
+          e.key === 'F12' ||                               // F12
+          (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase()))
+        ) {
+          e.preventDefault();
         }
       });
     </script>
