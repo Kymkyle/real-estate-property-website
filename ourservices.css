@@ -65,12 +65,13 @@ body, html, .background-image, .main-content, img {
     user-drag: none;
 }
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh; /* ensures it covers at least full screen height */
+  margin: 0; /* remove default margin */
+  padding: 0;
   background: url('IMAGES/background/image16.jpg') no-repeat center center / cover;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* optional: background stays fixed while scrolling */
   font-family: Tahoma, sans-serif;
 }
 
@@ -112,8 +113,8 @@ body {
   padding-bottom: 10px;
    /* Background Blur */
   background: transparent;
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px); /* for Safari */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
   padding-left: 100px;
   border-radius: 10px;
 }
@@ -163,13 +164,12 @@ body {
 
   .main-content {
     flex-direction: column;
-    padding-top: 800px;
     height: auto;
     background: url('IMAGES/background/image16.jpg') no-repeat center center / cover;
   }
 
   .body-container {
-    margin-top: 600px;
+    margin-top: 200px;
     margin-left: 20px;
     margin-right: 20px;
     padding-left: 20px;
@@ -231,14 +231,20 @@ body {
   }
 
   .body-container {
-    margin-top: 450px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    border-radius: 8px;
-  }
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+
+  /* background gradient */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(30, 30, 30, 0.9));
+
+  
+}
+
 
   .title-text {
     font-size: 16px;
@@ -246,9 +252,31 @@ body {
 
   .paragraph-text,
   .paragraph-text1 {
-    font-size: 13px;
+    font-size: 16px;
     padding: 8px;
     text-align: justify;
+  }
+  .paragraph-text1 {
+    color: rgb(44, 43, 43);
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  }
+  .paragraph-text4 {
+    color: rgb(23, 22, 22);
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  }
+  .paragraph-text5 {
+    color: rgb(6, 6, 6);
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  }
+
+  .title-text5 {
+    color:rgb(126, 38, 38);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    font-weight: 700;
   }
 
   .title-text2 {
@@ -258,6 +286,8 @@ body {
   .title-text3 {
     font-size: 28px;
     margin-right: 10px;
+    color:rgb(126, 38, 38);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   }
 
   #preloader {
