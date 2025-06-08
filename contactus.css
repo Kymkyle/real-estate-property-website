@@ -324,6 +324,7 @@ footer {
     max-width: 95%;
     padding: 8px;
     margin-top: 250px;
+    margin-bottom: 70px;
   }
 
   .contact-info h2 {
@@ -361,12 +362,27 @@ footer {
     font-size: 13px;
     padding: 8px 15px;
   }
+  
+  body {
+    min-height: 100vh;  /* ensures it covers at least full height */
+    background: url('IMAGES/background/oah1.jpg') no-repeat center center / cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* optional — makes background stay fixed on scroll */
+    font-family: Tahoma, sans-serif;
+    margin: 0; /* remove default margin */
+    padding: 0;
+  }
 
   footer {
     font-size: 11px;
-    text-align: center;
-    margin: 0;
+    color: rgb(63, 62, 62);
     padding: 10px;
-  }
+    position: fixed;
+    bottom: -160px; /* stick to bottom */
+    left: 0;
+    width: 100%; /* stretch full width */
+    text-align: center; /* center the text */
+}
 
 }
