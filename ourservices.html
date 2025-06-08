@@ -121,15 +121,15 @@
       });
 
       // Block dev tools and view-source shortcuts
-      document.addEventListener('keydown', function (e) {
-        if (
-            e.ctrlKey && (e.key === 'u' || e.key === 'U') || // Ctrl+U
-            e.key === 'F12' ||                               // F12
-            (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase()))
-        ) {
-            e.preventDefault();
-        }
-      });
+      // document.addEventListener('keydown', function (e) {
+      //   if (
+      //       e.ctrlKey && (e.key === 'u' || e.key === 'U') || // Ctrl+U
+      //       e.key === 'F12' ||                               // F12
+      //       (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase()))
+      //   ) {
+      //       e.preventDefault();
+      //   }
+      // });
     </script>
   </body>
 </html>
