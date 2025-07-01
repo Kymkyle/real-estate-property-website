@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>House2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/house2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="body-container">
+      <!-- House Details -->
+      <div class="house-details">
+        <div class="house-link">Details</div>
+        <div class="house">
+          <img src="images/house2/house2.jpg" alt="Main House" />
+        </div>
+        <div class="house-text">
+          <div class="house-price">$335,000</div>
+          <div class="address">10767 Jamacha Blvd SPACE 44, Spring Valley, CA</div>
+          <div class="container-text">
+            <div class="container-text-info">
+              <div class="body-details">4</div>
+              <div class="body-name">beds</div>
+            </div>
+            <div class="container-text-info">
+              <div class="body-details">2</div>
+              <div class="body-name">baths</div>
+            </div>
+            <div class="container-text-info">
+              <div class="body-details">1680</div>
+              <div class="body-name">sqft</div>
+            </div>
+        <div class="backlink-text">
+          <div class="back-link" onclick="history.back()">Return to page</div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Gallery -->
+      <div class="image-gallery">
+        <div class="gallery-card"><img src="images/house2/1.jpg" alt="Photo 1" /></div>
+        <div class="gallery-card"><img src="images/house2/2.jpg" alt="Photo 2" /></div>
+        <div class="gallery-card"><img src="images/house2/3.jpg" alt="Photo 3" /></div>
+        <div class="gallery-card"><img src="images/house2/4.jpg" alt="Photo 4" /></div>
+        <div class="gallery-card"><img src="images/house2/5.jpg" alt="Photo 5" /></div>
+        <div class="gallery-card"><img src="images/house2/6.jpg" alt="Photo 6" /></div>
+        <div class="gallery-card"><img src="images/house2/7.jpg" alt="Photo 7" /></div>
+        <div class="gallery-card"><img src="images/house2/floorplanimage.jpg" alt="Photo 8" /></div>
+        <div class="gallery-card"><img src="images/house2/house2.jpg" alt="Floorplan" /></div>
+      </div>
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-image" class="lightbox-content" src="" alt="">
+        <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
+      </div>
+
+      <div class="paragraph-container">
+        <div class="header-text">
+          <div class="text-bold">CUSTOM-BUILT ENTERTAINMENT CENTER</div>
+          <div class="text-bold">ADDITIONAL LAUNDRY ROOM</div>
+        </div>
+        <div class="paragraph-text">Discover one of the largest homes in the highly sought-after Lamp Lighter 
+          Village—an all-ages, dog-friendly community with easy access to Freeway 54. This beautifully 
+          maintained 4-bedroom, 2-bath mobile home offers comfort, space, and convenience in every corner. 
+        </div>
+        <div class="paragraph-text">
+          Step into a generously sized living room with a custom-built entertainment center, newly upgraded 
+          floors and countertops, and a layout designed for both relaxation and entertaining. Enjoy the 
+          convenience of a separate laundry room and a remodeled bathroom featuring dual sinks for added luxury.
+        </div>
+        <div class="paragraph-text">
+          Additional highlights include a 2-car carport, and rent that includes utilities—offering incredible 
+          value. As a resident, you'll also enjoy access to premium community amenities such as a swimming pool, 
+          fitness center, and clubhouse.
+          Don’t miss this rare opportunity to own a spacious, move-in-ready home in a vibrant, welcoming community!
+        </div>
+      </div>
+    </div>
+    <script src="js/house2.js"></script>
+  </body>
+</html>

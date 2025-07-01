@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Our Available Homes</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/ouravailablehomes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+      .house-details { display: none; }
+      .house-details.active { display: block; }
+    </style>
+  </head>
+  <body oncontextmenu="return false;">
+    <div id="preloader">
+      <div>Loading your dream home...</div>
+      <div class="spinner"></div>
+    </div>
+    <div class="main-content">
+      <div class="header">
+        <div class="header-home" onclick="window.location.href='index.html'">Home</div>
+        <div class="about-us" onclick="window.location.href='aboutus.html'">About Us</div>
+        <div class="our-services" onclick="window.location.href='ourservices.html'">Our Services</div>
+        <div class="our-available-homes">Our Available Homes</div>
+        <div class="contact-us" onclick="window.location.href='contactus.html'">Contact Us</div>
+      </div>
+
+      <div class="left-body"></div>
+
+      <div class="middle-body">
+        <!-- HOUSE 1 -->
+        <div id="house1-details" class="house-details active">
+          <div class="house-link" onclick="window.location.href='house1.html'">View Details:</div>
+          <div class="house"><img src="images/house1/house1.jpg"></div>
+          <div class="house-text">
+            <div class="house-price">$285,000</div>
+            <div class="address">13691 Gavina Ave UNIT 576, Sylmar, CA</div>
+            <div class="container-text">
+              <div class="container-text-info"><div class="body-details">3</div><div class="body-name">beds</div></div>
+              <div class="container-text-info"><div class="body-details">2</div><div class="body-name">baths</div></div>
+              <div class="container-text-info"><div class="body-details">1624</div><div class="body-name">sqft</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HOUSE 2 -->
+        <div id="house2-details" class="house-details">
+          <div class="house-link" onclick="window.location.href='house2.html'">View Details</div>
+          <div class="house"><img src="images/house2/house2.jpg"></div>
+          <div class="house-text">
+            <div class="house-price">$335,000</div>
+            <div class="address">10767 Jamacha Blvd SPACE 44, Spring Valley, CA</div>
+            <div class="container-text">
+              <div class="container-text-info"><div class="body-details">4</div><div class="body-name">beds</div></div>
+              <div class="container-text-info"><div class="body-details">2</div><div class="body-name">baths</div></div>
+              <div class="container-text-info"><div class="body-details">1680</div><div class="body-name">sqft</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HOUSE 3 -->
+        <div id="house3-details" class="house-details">
+          <div class="house-link" onclick="window.location.href='house3.html'">View Details</div>
+          <div class="house"><img src="images/house3/house3.jpg"></div>
+          <div class="house-text">
+            <div class="house-price">$195,000</div>
+            <div class="address">121 Orange Ave SPACE 32, Chula Vista, CA</div>
+            <div class="container-text">
+              <div class="container-text-info"><div class="body-details">3</div><div class="body-name">beds</div></div>
+              <div class="container-text-info"><div class="body-details">2</div><div class="body-name">baths</div></div>
+              <div class="container-text-info"><div class="body-details">1139</div><div class="body-name">sqft</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HOUSE 4 -->
+        <div id="house4-details" class="house-details">
+          <div class="house-link" onclick="window.location.href='house4.html'">View Details</div>
+          <div class="house"><img src="images/house4/house4.jpg"></div>
+          <div class="house-text">
+            <div class="house-price">$600,000</div>
+            <div class="address">34655 Creekwood Ct, Yucaipa, CA</div>
+            <div class="container-text">
+              <div class="container-text-info"><div class="body-details">4</div><div class="body-name">beds</div></div>
+              <div class="container-text-info"><div class="body-details">3</div><div class="body-name">baths</div></div>
+              <div class="container-text-info"><div class="body-details">2111</div><div class="body-name">sqft</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-body">
+        <img class="image-house" src="images/house1/house1.jpg" onclick="showHouseDetails('house1')">
+        <img class="image-house" src="images/house2/house2.jpg" onclick="showHouseDetails('house2')">
+        <img class="image-house" src="images/house3/house3.jpg" onclick="showHouseDetails('house3')">
+        <img class="image-house" src="images/house4/house4.jpg" onclick="showHouseDetails('house4')">
+      </div>
+    </div>
+    <script src="js/ouravailablehomes.js"></script>
+  </body>
+</html>

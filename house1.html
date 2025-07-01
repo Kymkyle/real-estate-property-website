@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>House1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/house1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="body-container">
+      <!-- House Details -->
+      <div class="house-details">
+        <div class="house-link">Details</div>
+        <div class="house">
+          <img src="images/house1/house1.jpg" alt="Main House" />
+        </div>
+        <div class="house-text">
+          <div class="house-price">$285,000</div>
+          <div class="address">13691 Gavina Ave UNIT 576, Sylmar, CA</div>
+          <div class="container-text">
+            <div class="container-text-info">
+              <div class="body-details">3</div>
+              <div class="body-name">beds</div>
+            </div>
+            <div class="container-text-info">
+              <div class="body-details">2</div>
+              <div class="body-name">baths</div>
+            </div>
+            <div class="container-text-info">
+              <div class="body-details">1624</div>
+              <div class="body-name">sqft</div>
+            </div>
+        <div class="backlink-text">
+          <div class="back-link" onclick="history.back()">Return to page</div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Gallery -->
+      <div class="image-gallery">
+        <div class="gallery-card"><img src="images/house1/1.jpg" alt="Photo 1" /></div>
+        <div class="gallery-card"><img src="images/house1/2.jpg" alt="Photo 2" /></div>
+        <div class="gallery-card"><img src="images/house1/3.jpg" alt="Photo 3" /></div>
+        <div class="gallery-card"><img src="images/house1/4.jpg" alt="Photo 4" /></div>
+        <div class="gallery-card"><img src="images/house1/5.jpg" alt="Photo 5" /></div>
+        <div class="gallery-card"><img src="images/house1/6.jpg" alt="Photo 6" /></div>
+        <div class="gallery-card"><img src="images/house1/7.jpg" alt="Photo 7" /></div>
+        <div class="gallery-card"><img src="images/house1/house1.jpg" alt="Photo 8" /></div>
+        <div class="gallery-card"><img src="images/house1/floorplan.png" alt="Floorplan" /></div>
+      </div>
+    
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-image" class="lightbox-content" src="" alt="">
+        <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
+      </div>
+
+      <div class="paragraph-container">
+        <div class="header-text">
+          <div class="text-bold">GENEROUSLY SIZED BACKYARD</div>
+          <div class="text-bold">FAMILY ROOM</div>
+          <div class="text-bold">FORMAL DINING AREA</div>
+          <div class="text-bold">COVERED ALUMAWOOD PATIO</div>
+        </div>
+        <div class="paragraph-text">Nestled in the highly desirable Jackson Crossing community, this spacious 3-bedroom, 
+          2-bathroom home offers a rare  chance to create your dream retreat. All bedrooms are thoughtfully located 
+          upstairs, while the main level boasts a separate living room, cozy family room, and formal dining area—perfect 
+          for both everyday living and entertaining guests. 
+        </div>
+        <div class="paragraph-text">
+          Step outside to a covered Alumawood patio overlooking a generously sized backyard, ready to be transformed into 
+          your personal oasis. For added convenience, the washer, dryer, and refrigerator are included.
+        </div>
+        <div class="paragraph-text">
+          Ideally situated near major freeways, shopping centers, and dining options, this home combines incredible potential 
+          with an unbeatable location. While it awaits your choice of new flooring and fresh paint, it presents the perfect 
+          blank canvas for your modern vision. Energy-efficient solar panels are already installed under a Power Purchase 
+          Agreement (PPA), which the buyer will assume—helping to reduce your future energy costs.
+        </div>
+      </div>
+    </div>
+
+    <script src="js/house1.js"></script>
+  </body>
+</html>

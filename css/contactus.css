@@ -1,0 +1,388 @@
+/* Preloader styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background: linear-gradient(to bottom right, gray, rgb(48, 46, 46));
+  
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;     /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  
+  font-size: 32px;
+  font-family: Tahoma, sans-serif;
+  color: gold;
+  
+  z-index: 9999;
+  /* USE ease-out for a nice fade effect */
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spinner {
+  margin-top: 20px; /* Space between paragraph and spinner */
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 215, 0, 0.3); /* light gold */
+  border-top: 5px solid gold; /* gold */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Preloader styles ending*/
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../images/background/oah1.jpg') no-repeat center center / cover;
+  background-size: cover;
+  background-position: center;
+  font-family: Tahoma, sans-serif;
+}
+/* Protection: Disable text selection & image dragging */
+body, html, .background-image, .main-content, img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 50px;
+  position: fixed;
+  top: 30px;
+  font-size: 40px;
+  color: gray;
+  /* 3D embossed text effect */
+  text-shadow: 
+    1px 1px 5px rgba(0, 0, 0, 0.6),   /* base shadow */
+    -1px -1px 1px rgba(255, 255, 255, 0.2); /* highlight for embossed look */
+  /* Transparent background with blur (glass effect) */
+  background: rgba(255, 255, 255, 0.05); /* very light translucent white */
+  backdrop-filter: blur(5px); 
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border-radius: 12px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  z-index: 50;
+}
+.header div:hover {
+  text-decoration: underline;
+  text-decoration-color: gray;
+  cursor: pointer;
+  text-underline-offset: 10px;
+}
+.container {
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent glassy look */
+  backdrop-filter: blur(7px); /* blur effect */
+  -webkit-backdrop-filter: blur(7px); /* for Safari */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  max-width: 500px;
+  width: 90%;
+  margin-top: 115px;
+
+  /* 3D effect */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-info h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: rgb(63, 62, 62);
+  font-weight: 700;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  color:rgb(75, 72, 72);
+  font-size: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 14px;
+  color:rgb(97, 94, 94);
+}
+
+form input,
+form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #999;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+form button {
+  background-color: #555;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+/* Hover effect */
+form button:hover {
+  background-color: #0c0c0c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  
+}
+/* Clicked (active) effect */
+form button:active {
+  background-color: #dad3d3; /* lighter color on click */
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: right;
+  margin-right: 40px;
+  color: gray;
+  font-size: 14px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Popup Modal */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s;
+  z-index: 9999; /* make sure it is on top */
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: popupAnimation 0.4s ease;
+}
+@keyframes popupAnimation {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.popup-content h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.popup-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-content button:hover {
+  background-color: #222;
+}
+#popup.show {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+/* Responsive for 768px and below */
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 28px;
+    top: 20px;
+    padding: 8px 15px;
+    margin-left: -400px;
+  }
+
+  .container {
+    max-width: 90%;
+    padding: 10px;
+    margin-top: 300px;
+  }
+
+  .contact-info h2 {
+    font-size: 32px;
+  }
+
+  form label,
+  form input,
+  form textarea,
+  form button {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+    margin-right: 20px;
+    margin-bottom: 150px;
+  }
+
+}
+
+/* Responsive for 400px and below */
+@media (max-width: 400px) {
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* left-align the text inside */
+    gap: 15px;
+    font-size: 22px;
+    top: 15px;
+    padding: 10px;
+    margin-left: -140px;
+  }
+
+  .container {
+    max-width: 95%;
+    padding: 8px;
+    margin-top: 250px;
+    margin-bottom: 70px;
+  }
+
+  .contact-info h2 {
+    font-size: 26px;
+  }
+
+  .contact-info p {
+    font-size: 13px;
+  }
+
+  form label {
+    font-size: 12px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  form button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .popup-content {
+    padding: 20px;
+  }
+
+  .popup-content h2 {
+    font-size: 20px;
+  }
+
+  .popup-content button {
+    font-size: 13px;
+    padding: 8px 15px;
+  }
+  
+  body {
+    min-height: 100vh;  /* ensures it covers at least full height */
+    background: url('IMAGES/background/oah1.jpg') no-repeat center center / cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* optional — makes background stay fixed on scroll */
+    font-family: Tahoma, sans-serif;
+    margin: 0; /* remove default margin */
+    padding: 0;
+  }
+
+  footer {
+    font-size: 11px;
+    color: rgb(63, 62, 62);
+    padding: 10px;
+    position: fixed;
+    bottom: -160px; /* stick to bottom */
+    left: 0;
+    width: 100%; /* stretch full width */
+    text-align: center; /* center the text */
+}
+
+}

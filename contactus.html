@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" type="text/css" href="css/contactus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body oncontextmenu="return false;">
+  <div id="preloader">
+    <div>Loading your dream home...</div>
+    <div class="spinner"></div>
+  </div>
+  <div class="main-content">
+    <div class="header">
+      <div class="header-home" onclick="window.location.href='index.html'">Home</div>
+      <div class="about-us" onclick="window.location.href='aboutus.html'">About Us</div>
+      <div class="our-services" onclick="window.location.href='ourservices.html'">Our Services</div>
+      <div class="our-available-homes" onclick="window.location.href='ouravailablehomes.html'">Our Available Homes</div>
+      <div class="contact-us">Contact Us</div>
+    </div>
+
+    <div class="container">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p><strong>Clair Simons</strong></p>
+        <p>123 Main Street, Suite 100</p>
+        <p>Springfield, CA</p>
+        <p>Email: simons.realtor@gmail.com</p>
+        <p>Phone: (555) 123-4567</p>
+      </div>
+
+      <form id="contactForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" />
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 All rights reserved.</p>
+    </footer>
+    <!-- Popup Modal -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h2>Thank you!</h2>
+        <p>Your message has been sent successfully.</p>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>  
+  <script src="js/contactus.js"></script>
+</body>
+</html>

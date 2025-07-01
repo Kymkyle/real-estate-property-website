@@ -1,0 +1,321 @@
+/* Preloader styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background: linear-gradient(to bottom right, gray, rgb(48, 46, 46));
+  
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;     /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  
+  font-size: 32px;
+  font-family: Tahoma, sans-serif;
+  color: gold;
+  
+  z-index: 9999;
+  /* USE ease-out for a nice fade effect */
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spinner {
+  margin-top: 20px; /* Space between paragraph and spinner */
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 215, 0, 0.3); /* light gold */
+  border-top: 5px solid gold; /* gold */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Preloader styles */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px; /* Adjusted for header */
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+/* Protection: Disable text selection & image dragging */
+body, html, .background-image, .main-content, img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+body {
+  min-height: 100vh; /* ensures it covers at least full screen height */
+  margin: 0; /* remove default margin */
+  padding: 0;
+  background: url('../images/background/image16.jpg') no-repeat center center / cover;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* optional: background stays fixed while scrolling */
+  font-family: Tahoma, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 50px;
+  position: fixed;
+  top: 20px;
+  font-size: 40px;
+  color: gray;
+  /* 3D embossed text effect */
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.6),   /* base shadow */
+    -1px -1px 1px rgba(255, 255, 255, 0.2); /* highlight for embossed look */
+  /* Transparent background with blur (glass effect) */
+  background: rgba(255, 255, 255, 0.05); /* very light translucent white */
+  backdrop-filter: blur(5px); 
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border-radius: 12px;
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  z-index: 50;
+}
+.header div:hover {
+  text-decoration: underline;
+  text-decoration-color: gray;
+  cursor: pointer;
+  text-underline-offset: 10px;
+}
+.body-container {
+  font-family: Tahoma, sans-serif;
+  text-align: justify;
+  margin-top: 240px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 10px;
+   /* Background Blur */
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  padding-left: 100px;
+  border-radius: 10px;
+}
+.title-text {
+  font-weight: bold;
+  font-size: 20px;
+  color:  rgb(126, 38, 38);
+  margin-top: 20px;
+}
+.paragraph-text {
+  color: rgb(26, 25, 25);
+  font-size: 15px;
+  font-weight: 400;
+}
+.paragraph-text1 {
+  color: rgb(97, 32, 32);
+  font-size: 15px;
+  
+}
+.title-text2 {
+  margin-top: 10px;
+  font-weight: 700;
+  color: rgb(126, 38, 38);
+}
+.title-text3 {
+  margin-top: 5px;
+  font-weight: 700;
+  color:rgb(26, 25, 25);
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  margin-right: 50px;
+}
+/* Responsive styles */
+
+/* For devices up to 768px (tablets) */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    margin-left: -420px;
+    gap: 20px;
+    font-size: 28px;
+    padding: 10px 15px;
+    top: 10px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    height: auto;
+    background: url('IMAGES/background/image16.jpg') no-repeat center center / cover;
+  }
+
+  .body-container {
+    margin-top: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+  }
+
+  .title-text {
+    font-size: 18px;
+  }
+
+  .paragraph-text,
+  .paragraph-text1 {
+    font-size: 14px;
+    padding: 10px;
+    text-align: justify;
+  }
+
+  .title-text2 {
+    font-size: 18px;
+  }
+
+  .title-text3 {
+    font-size: 32px;
+    margin-right: 20px;
+  }
+
+  #preloader {
+    font-size: 24px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 4px;
+  }
+}
+/* For devices up to 400px (small phones) */
+@media (max-width: 400px) {
+  .header {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 22px;
+    padding: 8px 12px;
+    margin: 0;
+    border-radius: 10px;
+    z-index: 50;
+  }
+
+  .main-content {
+    flex-direction: column;
+    margin-top: 10px; /* leave space for header */
+    height: auto;
+    background: url('IMAGES/background/image16.jpg') no-repeat center center / cover;
+  }
+
+  .body-container {
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+
+  /* background gradient */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(30, 30, 30, 0.9));
+
+  
+}
+
+
+  .title-text {
+    font-size: 16px;
+  }
+
+  .paragraph-text,
+  .paragraph-text1 {
+    font-size: 16px;
+    padding: 8px;
+    text-align: justify;
+  }
+  .paragraph-text1 {
+    color: rgb(44, 43, 43);
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  }
+  .paragraph-text4 {
+    color: rgb(23, 22, 22);
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  }
+  .paragraph-text5 {
+    color: rgb(6, 6, 6);
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  }
+
+  .title-text5 {
+    color:rgb(126, 38, 38);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .title-text2 {
+    font-size: 16px;
+  }
+
+  .title-text3 {
+    font-size: 28px;
+    margin-right: 10px;
+    color:rgb(126, 38, 38);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  #preloader {
+    font-size: 20px;
+  }
+
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

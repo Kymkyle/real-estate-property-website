@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>House3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/house3.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="body-container">
+      <!-- House Details -->
+      <div class="house-details">
+        <div class="house-link">Details</div>
+        <div class="house">
+          <img src="images/house3/house3.jpg" alt="Main House" />
+        </div>
+        <div class="house-text">
+          <div class="house-price">$195,000</div>
+          <div class="address">121 Orange Ave SPACE 32, Chula Vista, CA</div>
+          <div class="container-text">
+            <div class="container-text-info">
+              <div class="body-details">3</div>
+              <div class="body-name">beds</div>
+            </div>
+            <div class="container-text-info">
+              <div class="body-details">2</div>
+              <div class="body-name">baths</div>
+            </div>
+            <div class="container-text-info">
+              <div class="body-details">1139</div>
+              <div class="body-name">sqft</div>
+            </div>
+        <div class="backlink-text">
+          <div class="back-link" onclick="history.back()">Return to page</div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Gallery -->
+      <div class="image-gallery">
+        <div class="gallery-card"><img src="images/house3/1.jpg" alt="Photo 1" /></div>
+        <div class="gallery-card"><img src="images/house3/2.jpg" alt="Photo 2" /></div>
+        <div class="gallery-card"><img src="images/house3/3.jpg" alt="Photo 3" /></div>
+        <div class="gallery-card"><img src="images/house3/4.jpg" alt="Photo 4" /></div>
+        <div class="gallery-card"><img src="images/house3/5.jpg" alt="Photo 5" /></div>
+        <div class="gallery-card"><img src="images/house3/6.jpg" alt="Photo 6" /></div>
+        <div class="gallery-card"><img src="images/house3/7.jpg" alt="Photo 7" /></div>
+        <div class="gallery-card"><img src="images/house3/house3.jpg" alt="Photo 8" /></div>
+        <div class="gallery-card"><img src="images/house3/floorplan.jpg" alt="Floorplan" /></div>
+      </div>
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-image" class="lightbox-content" src="" alt="">
+        <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
+      </div>
+
+      <div class="paragraph-container">
+        <div class="header-text">
+          <div class="text-bold">CHARMING FRONT PORCH</div>
+          <div class="text-bold">BRIGHT COMFORTABLE LIVING</div>
+        </div>
+        <div class="paragraph-text">Nestled in a luxury leased-land community known for its pride of 
+          ownership, this beautifully maintained 3-bedroom, 2-bath manufactured home offers 1,139 
+          sq. ft. of bright and inviting living space. 
+        </div>
+        <div class="paragraph-text">
+          Freshly painted from top to bottom, the interior feels like new—every detail thoughtfully 
+          refreshed. Step onto the welcoming front porch, perfect for sipping your morning coffee or 
+          relaxing at the end of the day.
+        </div>
+        <div class="paragraph-text">
+          With a move-in ready condition, all that’s missing is your furniture and personal touch to 
+          make this house your home. Don’t miss this opportunity to live in a community that combines 
+          comfort, charm, and care.
+        </div>
+      </div>
+    </div>
+    <script src="js/house3.js"></script>
+  </body>
+</html>

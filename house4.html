@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>House4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/house4.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="body-container">
+      <!-- House Details -->
+      <div class="house-details">
+        <div class="house-link">Details</div>
+        <div class="house">
+          <img src="images/house4/house4.jpg" alt="Main House" />
+        </div>
+        <div class="house-text">
+          <div class="house-price">$600,000</div>
+          <div class="address">34655 Creekwood Ct, Yucaipa, CA</div>
+          <div class="container-text">
+            <div class="container-text-info">
+              <div class="body-details">4</div>
+              <div class="body-name">beds</div>
+            </div>
+            <div class="container-text-info">
+              <div class="body-details">3</div>
+              <div class="body-name">baths</div>
+            </div>
+            <div class="container-text-info">
+              <div class="body-details">2050</div>
+              <div class="body-name">sqft</div>
+            </div>
+        <div class="backlink-text">
+          <div class="back-link" onclick="history.back()">Return to page</div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Gallery -->
+      <div class="image-gallery">
+        <div class="gallery-card"><img src="images/house4/1.jpg" alt="Photo 1" /></div>
+        <div class="gallery-card"><img src="images/house4/2.jpg" alt="Photo 2" /></div>
+        <div class="gallery-card"><img src="images/house4/3.jpg" alt="Photo 3" /></div>
+        <div class="gallery-card"><img src="images/house4/4.jpg" alt="Photo 4" /></div>
+        <div class="gallery-card"><img src="images/house4/5.jpg" alt="Photo 5" /></div>
+        <div class="gallery-card"><img src="images/house4/6.jpg" alt="Photo 6" /></div>
+        <div class="gallery-card"><img src="images/house4/7.jpg" alt="Photo 7" /></div>
+        <div class="gallery-card"><img src="images/house4/8.jpg" alt="Photo 8" /></div>
+        <div class="gallery-card"><img src="images/house4/house4.jpg" alt="Photo9" /></div>
+      </div>
+    
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-image" class="lightbox-content" src="" alt="">
+        <span class="next-btn" onclick="changeImage(1)">&#10095;</span>
+      </div>
+
+      <div class="paragraph-container">
+        <div class="header-text">
+          <div class="text-bold"> LOW-MAINTENANCE BACKYARD</div>
+          <div class="text-bold">QUIET CUL-DE-SAC</div>
+        </div>
+        <div class="paragraph-text">Tucked away in a quiet cul-de-sac in the heart of Yucaipa, 
+          this beautifully landscaped 4-bedroom, 3-bathroom home offers 2,050 sq. ft. of 
+          thoughtfully designed living space—with no HOA restrictions.
+        </div>
+        <div class="paragraph-text">
+          Step inside to discover a bright, open floor plan that effortlessly connects the living, 
+          dining, and kitchen areas—ideal for both everyday living and entertaining. The spacious 
+          living room features a cozy fireplace, creating a warm, inviting atmosphere for relaxing 
+          or hosting guests.
+        </div>
+        <div class="paragraph-text">
+          The primary suite is a standout feature, offering direct access to a covered patio and a 
+          low-maintenance backyard—perfect for unwinding in your own private oasis. The yard is 
+          beautifully landscaped, offering tranquil outdoor living with minimal upkeep.
+          This move-in-ready gem offers the perfect blend of comfort, privacy, and convenience in one 
+          of Yucaipa’s most desirable neighborhood. Whether you're gathering with friends or enjoying 
+          a quiet evening at home, this residence is ready to welcome you.
+          Don’t miss your chance to make it yours!
+        </div>
+      </div>
+    </div>
+    <script src="js/house4.js"></script>
+  </body>
+</html>

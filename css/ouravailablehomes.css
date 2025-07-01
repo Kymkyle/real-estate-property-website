@@ -1,0 +1,415 @@
+/* Preloader styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background: linear-gradient(to bottom right, gray, rgb(48, 46, 46));
+  
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;     /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  
+  font-size: 32px;
+  font-family: Tahoma, sans-serif;
+  color: gold;
+  
+  z-index: 9999;
+  /* USE ease-out for a nice fade effect */
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spinner {
+  margin-top: 20px; /* Space between paragraph and spinner */
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 215, 0, 0.3); /* light gold */
+  border-top: 5px solid gold; /* gold */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Preloader styles */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px; /* Adjusted for header */
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+/* Protection: Disable text selection & image dragging */
+body, html, .background-image, .main-content, img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/background/oah2.jpg') no-repeat center center / cover;
+  filter: blur(5px);
+  z-index: -1;
+  font-family: Tahoma, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgba(3, 28, 73, 0.137); */
+  background: url('../images/background/oah1.jpg') no-repeat center center / cover;
+  background-size: cover;
+  background-position: center;
+  font-family: Tahoma, sans-serif;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  font-size: 40px;
+  color: gray;
+  /* 3D embossed text effect */
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.6),   /* base shadow */
+    -1px -1px 1px rgba(255, 255, 255, 0.2); /* highlight for embossed look */
+  /* Transparent background with blur (glass effect) */
+  background: rgba(255, 255, 255, 0.05); /* very light translucent white */
+  backdrop-filter: blur(5px); 
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border-radius: 12px;
+  padding: 15px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  z-index: 50;
+}
+.header div:hover {
+  text-decoration: underline;
+  text-decoration-color: gray;
+  cursor: pointer;
+  text-underline-offset: 10px;
+}
+.body-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh; /* Optional: full viewport height */
+}
+.left-body,
+.middle-body,
+.right-body {
+  padding: 20px;
+  color: white;
+}
+.middle-body {
+  flex: 3;
+  margin-top: 100px;
+  /* 3D Effect */
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.3),   /* deep shadow */
+    0 6px 6px rgba(0, 0, 0, 0.22);    /* soft shadow */
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 200;
+}
+.right-body {
+  flex: 1;
+  margin-top: 100px;
+  margin-left: 260px;;
+}
+.image-house {
+  width: 220px;
+  border: 5px solid transparent;
+  margin: 5px;
+
+  /* 3D Effect */
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.3),   /* deep shadow */
+    0 6px 6px rgba(0, 0, 0, 0.22);    /* soft shadow */
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: Add interactivity */
+.image-house:hover {
+  border-color: white;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.4),
+    0 10px 10px rgba(0, 0, 0, 0.3);
+}
+.house-details {
+  margin-left: 60px;
+  font-family: Tahoma;
+}
+.house {
+  height: 300px;
+  margin-top: 40px;
+}
+.house-text {
+  color:gold;
+  font-weight: 700;
+  margin-left: 240px;
+  padding: 20px;
+  font-size: 23px;
+  /* 3D embossed text effect */
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.6),   /* base shadow */
+    -1px -1px 1px rgba(255, 255, 255, 0.2); /* highlight for embossed look */
+  /* Transparent background with blur (glass effect) */
+  background: rgba(255, 255, 255, 0.05); /* very light translucent white */
+  backdrop-filter: blur(5px); 
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+}
+.container-text {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.container-text-info {
+  display: flex;
+  flex-direction: column;
+}
+.address {
+  margin-bottom: 10px;
+}
+.house-price {
+  font-size: 50px;
+  color: white
+}
+.house-link {
+  font-size: 30px;
+  font-weight: 700;
+  color: gold;
+}
+.house-link:hover {
+  text-decoration: underline;
+  text-decoration-color: gray;
+  cursor: pointer;
+  text-underline-offset: 10px;
+}
+/* Responsive Styles */
+
+/* For devices up to 768px (tablets and below) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 28px;
+    padding: 10px 20px;
+    top: 10px;
+    left: 60px;
+    gap: 10px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding-top: 280px;
+  }
+
+  .body-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .middle-body {
+    margin-top: 350px;
+    padding: 10px;
+    width: 600px;
+    margin-left: -85px;
+    margin-bottom: 10px;
+  }
+  .house img {
+    width: 580px;
+    margin-left: -40px;
+  }
+  .container-text-info {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    justify-content: center;
+  }
+  .container-text {
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* House text */
+  .house-text {
+    margin-top: -20px;
+    margin-left: -30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: gold;
+    padding: 6px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 8px;
+    text-shadow:
+      1px 1px 1px rgba(0, 0, 0, 0.6),
+      -1px -1px 1px rgba(255, 255, 255, 0.2);
+  }
+  .right-body {
+    margin-top: 20px;
+    margin-left: 10px;
+    
+  }
+  .image-house {
+    width: 300px;
+  }
+  .house-price {
+    font-size: 36px;
+  }
+
+  .house-link {
+    font-size: 24px;
+  }
+}
+@media (max-width: 400px) {
+
+  /* Header */
+  .header {
+    position: fixed;
+    top: 20px;
+    left: 45px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 22px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: gray;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 50;
+  }
+
+  .header div:hover {
+    text-decoration: underline;
+    text-decoration-color: gray;
+    cursor: pointer;
+    text-underline-offset: 6px;
+  }
+  .main-content {
+    margin-top: 80px;
+    height: 320px;
+    margin-top: 10px;
+  }
+  .middle-body {
+    font-size: 14px;
+    width: 300px;
+    height: 300px;
+    margin-left: 0;
+    margin-top: 50px;
+  }
+  .right-body {
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+  /* House section */
+  .house img {
+    width: 225px;
+    display: block;
+    margin-top: -30px;
+    margin-left: -55px;
+  }
+
+  /* House text */
+  .house-text {
+    margin-top: -180px;
+    margin-left: -30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: gold;
+    padding: 6px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 8px;
+    text-shadow:
+      1px 1px 1px rgba(0, 0, 0, 0.6),
+      -1px -1px 1px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Text containers */
+  .container-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container-text-info {
+    display: flex;
+    flex-direction: row;
+    font-size: 11px;
+    justify-content: center;
+  }
+
+  /* Address */
+  .address {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  .image-house {
+    width: 150px;
+    margin-left: 0;
+  } 
+  /* House price */
+  .house-price {
+    font-size: 18px;
+    color: white;
+  }
+
+  /* House link */
+  .house-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: gold;
+    margin-top: 10px;
+    margin-left: -45px;
+  }
+
+  .house-link:hover {
+    text-decoration: underline;
+    text-decoration-color: gray;
+    cursor: pointer;
+    text-underline-offset: 6px;
+  }
+}
